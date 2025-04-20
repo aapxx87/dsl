@@ -114,6 +114,8 @@ const creativityFlow = {
     ]
   },
 
+
+  
   creative_conditions: {
     title: "Условия для творчества",
 
