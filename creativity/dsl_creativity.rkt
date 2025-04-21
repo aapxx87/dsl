@@ -1,65 +1,119 @@
 #lang br
 
-; =========================================
-; 0. ENTRY POINT: запуск фреймворка с mapping
-; =========================================
+;; === ENTRY POINT — точка запуска модели ===
 
 entry_point = {
-  context: context,
+  context: context_from_modifiers(modifiers),
   state: derive_state_from_context(context),
   experience_bank: experience_bank_from_sources(experience_sources),
   evaluate: mapping insight
 }
 
 
-; =========================================
-; 1. RULE: инсайт как центральная цель модели
-; =========================================
+;; === MAPPING: INSIGHT — центральное правило ===
 
 mapping insight {
   requires: {
+
     environment: {
       physical_context: ["nature", "urban_park"],
       spatial_quality: ["calm", "safe", "quiet"],
-      activity: ["walk", "sitting", "wandering"]
+      activity:
+       indoor: ["open_monitoring_meditation"]
+       outdoor: ["walk", "sitting", "wandering"]
     },
-    internal_state: state,
-    experience_bank: experience_bank_richness(experience_bank)
+
+    internal_state: {
+      
+      mental_pressure: derive_state_from_context(mental_pressure, context)
+      physical_state: derive_state_from_context(physical_state, context),
+      emotional_state: derive_state_from_context(emotional_state, context),
+
+      cognitive_state:
+        focus_mode: "diffuse",           ; фиксировано для текущей модели
+        thinking_pattern: "non_linear",  ; фиксировано для текущей модели
+    },
+
+    experience_bank_richness: f(experience_bank_richnes(experience_sources))
   }
+
+  probability_of_insight: f(
+    environment, 
+    internal_state, 
+    experience_bank_richness
+  )
+
   produces: ["insight"]
 }
 
 
-; =========================================
-; 2. LOGIC: derived entities and evaluations
-; =========================================
+;; === LOGIC FUNCTIONS ===
 
-function experience_bank_richness(bank) {
-  return bank.domain_count >= 5
-      && bank.overlapping == "low"
-      && bank.associative_bridges == "present"
+function experience_bank_richnes(experience_sources) {
+
+  return 
+    experience_sources.domain_count >= 5
+    && experience_sources.overlapping == "low"
+    && experience_sources.associative_bridges == "present"
+
 }
 
-function derive_state_from_context(context) {
-  let pressure = "low"
-  if context.active includes "stress" or "hangover"
-    → pressure = "medium"
-  if context.active includes both "stress" and "sleep_deprivation"
-    → pressure = "high"
+
+function derive_state_from_context(state_type, context) {
+
+  let score = 0
+
+  for factor in context.active {
+
+    if modifiers.positive includes_any [category where category includes factor]
+      → score += 1
+
+    if modifiers.negative includes_any [category where category includes factor]
+      → score -= 1
+  }
+
+  let level = map_score_to_level(score)
 
   return {
-    focus_mode: "diffuse",           ; фиксировано для текущей модели
-    thinking_pattern: "non_linear",
-    mental_pressure: pressure
+    state: level
   }
 }
 
-probability_of_insight = f(environment, state, experience_bank)
 
 
-; =========================================
-; 3. INPUT: источники опыта и контекст среды
-; =========================================
+
+function map_score_to_level(score, state_type) {
+
+  let level = "low"
+
+  thresholds = {
+    mental_pressure: [
+      { min: 0, level: "low" },
+      { min: 2, level: "medium" },
+      { min: 4, level: "high" }
+    ],
+    physical_state: [
+      { min: 0, level: "stable" },
+      { min: 3, level: "fatigued" },
+      { min: 5, level: "exhausted" }
+    ],
+    emotional_state: [
+     { min: 0, level: "balanced" },
+     { min: 2, level: "irritated" },
+     { min: 4, level: "distressed" }
+  ]
+  }
+
+  for step in thresholds.state_type {
+    if score >= step.min → level = step.level
+  }
+
+  return level
+}
+
+
+
+;; === INPUT MODEL: источники и контекст ===
 
 experience_sources = {
   literature:        ["sci-fi", "classics", "nonfiction"],
@@ -68,113 +122,89 @@ experience_sources = {
   hobbies:           ["birdwatching", "urban_exploration"]
 }
 
+
 context = {
-  active: ["rest", "walk", "stress"]
+  active: {
+
+    modifiers.positive: {
+      affects_environment:        ["solitude_walk", "natural_light"],
+      reduces_mental_pressure:    ["open_monitoring_meditation", "slow_walking"],
+      improves_physical_state:    ["rest", "hydration"],
+      improves_emotional_state:   ["creative_expression", "gratitude_reflection"]
+    },
+
+    modifiers.negative: {
+      affects_environment:        ["overcrowding", "harsh_lighting"],
+      disrupts_mental_pressure:   ["stress", "sleep_deprivation"],
+      worsens_physical_state:     ["dehydration", "overexertion"],
+      worsens_emotional_state:    ["social_pressure", "self_criticism"]
+    }
+
+  }
 }
 
 
-; =========================================
-; 4. BASE DEFINITIONS: параметры и модификаторы
-; =========================================
+;; === DEFINITIONS: параметры и модификаторы ===
 
 param focus_mode         { options: ["diffuse", "narrow", "unfocused"] }
 param thinking_pattern   { options: ["non_linear", "structured", "wandering"] }
 param mental_pressure    { options: ["low", "medium", "high"] }
 
 modifiers = {
-  affects_environment:      ["solitude_walk", "natural_light"],
-  reduces_mental_pressure:  ["open_monitoring_meditation", "free_schedule"],
-  improves_emotion_state:   ["rest", "recovery"],
-  disrupts_state:           ["stress", "sleep_deprivation", "hangover", "social_pressure"]
+
+  positive: [
+
+    reduces_mental_pressure: [
+      "open_monitoring_meditation", "free_schedule",
+      "slow_walking", "birdwatching",
+      "solo_time_in_nature"
+    ],
+
+    improves_physical_state: [
+      "light_movement", "rest",
+      "hydration", "breathing_exercises",
+      "stretching"
+    ],
+
+    improves_emotional_state: [
+      "empathic_conversation", "creative_expression",
+      "recovery", "presence", "gratitude_reflection"
+    ],
+
+    affects_environment: [
+      "solitude_walk", "natural_light",
+      "calm_music", "green_space",
+      "safe_urban_corner"
+    ]
+  ],
+
+  negative: [
+
+    disrupts_mental_pressure: [
+      "stress", "sleep_deprivation",
+      "hangover", "overcommitment",
+      "deadline_pressure"
+    ],
+
+    worsens_physical_state: [
+      "dehydration", "poor_sleep",
+      "overexertion", "sedentary_day"
+    ],
+
+    worsens_emotional_state: [
+      "conflict", "social_pressure",
+      "emotional_exhaustion", "self_criticism",
+      "noise_pollution"
+    ],
+
+    affects_environment: [
+      "overcrowding", "chaotic_surroundings",
+      "harsh_lighting", "lack_of_privacy",
+      "constant_noise"
+    ]
+  ]
 }
 
 
 
 
-
-
-; =========================================
-; ## LONG_DOCS — Расширённые пояснения
-; =========================================
-
-long_docs = {
-
-  about_framework: """
-  То, что описано в этом файле — это не просто набор параметров, а зачаток семантического фреймворка, который:
-
-  • структурирует знания о творчестве и когнитивных состояниях;
-  • задаёт онтологию (какие сущности есть и как они взаимодействуют);
-  • описывает механику переходов и зависимостей;
-  • задаёт правила вычислений и оценки вероятностей;
-  • содержит словарь интерпретаций и прикладной инструментарий.
-
-  ✅ Что делает его именно фреймворком
-
-  1. Уровень абстракции:
-     Здесь не моделируются конкретные события, а задаются категории, которые объясняют:
-     • откуда взялся инсайт,
-     • какие условия критичны,
-     • как можно на это повлиять.
-
-  Такой фреймворк — это не просто модель, а система мышления, которую можно адаптировать под разные задачи.
-  """,
-
-
-  mental_pressure: """
-  Ментальное давление — это многослойное явление, объединяющее:
-  - субъективную загруженность (много мыслей в голове)
-  - эмоциональное напряжение (тревога, вина, спешка)
-  - соматическое состояние (усталость, недосып, истощение)
-
-  Даже при внешне "лёгком" расписании человек может ощущать high pressure — если на него давят внутренние установки или неразрешённые конфликты.
-
-  В модели креативности:
-  - High pressure → переключение на целевое, суженное внимание
-  - Low pressure → активация default mode network → инсайты
-
-  Используется в internal_state, может быть вычислена из context через derive_state_from_context().
-  """,
-
-
-  focus_mode: """
-  Режим внимания:
-  - diffuse — рассеянное восприятие, позволяет улавливать слабые сигналы и неявные связи.
-  - narrow — сосредоточенность на конкретной задаче, хорошо для линейных решений.
-  - unfocused — хаотичное внимание без вектора, снижает продуктивность.
-
-  Важно различать diffuse и unfocused — первое продуктивно, второе — нет.
-  """,
-
-
-  thinking_pattern: """
-  Форма текущего мышления:
-  - non_linear — ассоциативное, метафорическое, не по шагам.
-  - structured — логичное, последовательное, используется в аналитике.
-  - wandering — случайное, без структуры, может быть источником озарений, но редко управляемо.
-  """,
-
-
-  experience_bank: """
-  Это абстракция, описывающая внутренний «резерв» разнообразных впечатлений, знаний, и ассоциаций.
-
-  Формируется из experience_sources.
-  Богатый experience_bank должен:
-  - покрывать несколько семантически разных доменов
-  - содержать мосты между этими доменами
-  - быть достаточно свежим и насыщенным
-
-  Используется в качестве материала, из которого может быть построен инсайт.
-  """,
-
-
-  mapping insight: """
-  Mapping инсайта задаёт условия, при которых когнитивная система способна сгенерировать новое понимание.
-
-  Требует:
-  - среды с низким шумом и возможностью блуждания
-  - внутреннего состояния, допускающего ассоциативное мышление
-  - достаточно разнообразного опыта
-
-  Результат: появление "insight" — точки пересборки смысла или озарения.
-  """
-}
