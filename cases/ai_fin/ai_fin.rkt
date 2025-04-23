@@ -110,7 +110,7 @@ mapping ai_accountant_discovery {
      if: business_analytics.difference_in_cost > threshold
      then: run hypothesis_test
 
-    design_hypothesis_test: {
+    hypothesis_test: {
       create_assets:
         - fake product presentation
         - fake product offer
