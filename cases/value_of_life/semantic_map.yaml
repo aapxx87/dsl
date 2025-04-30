@@ -1,0 +1,25 @@
+mapping value_of_life: {
+
+  context: {},
+
+  lens_map: {},
+
+  perspective_sets: {
+
+    internal: {
+      dimensions: {
+        cognitive
+        evolutionary
+      },
+    },
+
+    external: {
+      perspectives: {
+        rational_biological_reductionism
+        empirical_ethics
+        religious_foundation
+        secular_humanism
+      }  
+    }    
+  } 
+}       
