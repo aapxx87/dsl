@@ -1,25 +1,64 @@
 mapping value_of_life: {
 
-  context: {},
+  context: {
+    source: "Фрагмент 'Игры в бисер', беседа Иосифа Кнехта и отца Якова",
 
-  lens_map: {},
+    key_themes: [
+      "Религиозные ценности vs светское воспитание",
+      "Происхождение убеждения о ценности жизни",
+      "Роль религии в формировании этических ориентиров"
+    ]
+  },
+
+  lens_map: {
+    neurobiology: {
+      covers_perpectives: [rational_biological_reductionism, internal.evolutionary]
+    },
+    philosophy: {
+      covers_perpectives: [secular_humanism, empirical_ethics]
+    },
+    religious: {
+      covers_perpectives: [religious_foundation]
+    },
+    sociology: {
+      covers_perpectives: [secular_humanism, religious_foundation]
+    }
+  },
 
   perspective_sets: {
 
     internal: {
+      description: "Личностно-субъективная перспектива (эмоции, переживания, личная ценность)",
+
       dimensions: {
         cognitive
         evolutionary
-      },
+        affective
+        narrative_identity
+        social_reflective
+        ontological_security
+      }
     },
 
     external: {
+      description: "Объективированная перспектива (рациональные, социальные, нейробиологические и др. аспекты)",
+
       perspectives: {
         rational_biological_reductionism
-        empirical_ethics
         religious_foundation
         secular_humanism
-      }  
-    }    
-  } 
-}       
+        empirical_ethics: {
+          includes: [
+            reasoning                        
+            evolutionary_limitations: {
+             inclusive_fitness
+             cooperative_pragmatism
+             empathic_bias
+            },        
+            modeling_functions.estimate_life_value
+          ]
+        }
+      }
+    }
+  }
+}
