@@ -1,4 +1,5 @@
 ## Архитектуры смыслов в гибридных нарративно-структурных системах
+(Architectures of meanings in hybrid narrative-structural systems)
 
 ### 1. Твоя практика: нарратив как первичный носитель смысла
 
@@ -156,3 +157,21 @@
 - `define-link`
 - `query-graph`
 - `transform-path`
+
+```rkt
+
+  (define-node 'выбор_как_испытание
+    #:text "Ценность проявляется в преодолении"
+    #:kind 'concept
+    #:tags '(этика трансформация))
+
+  (define-link 'выбор_как_испытание 'простое_действие_не_ценностно 'contrast)
+
+  (query-graph (path-from 'выбор_как_испытание))
+
+```
+
+---
+
+
+
