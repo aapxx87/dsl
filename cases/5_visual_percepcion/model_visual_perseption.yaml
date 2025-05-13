@@ -1,4 +1,54 @@
+
+visual_perception_misconception: {
+
+ description:
+    Модель, описывающая стереотипное интуитивное восприятие визуального опыта — 
+    как кажущееся "непосредственное" взаимодействие с объектами, 
+    не осознавая промежуточных процессов восприятия.
+  
+  perception_assumption: {
+   name: naive_visual_experience,
+   description: "Интуитивное убеждение, что зрение — это прямой доступ к объектам",
+
+   structure: {
+      trigger_event: eyes_open,
+      perceived_result: "world appears",
+      implication: "objects are simply present",
+
+      phenomenological_surface: {
+       example_objects: [table, wall, tree],
+       status: "just_there"
+      },
+
+      cognitive_overlay: {
+        implicit_belief: "we see objects directly",
+        unnoticed: [photons, retina, brain_processing],
+        metaphor: "immediate contact with things",
+      }
+   }
+  },
+
+  misperception_node: {
+    type: conceptual_illusion,
+    description:
+      "Зрительное восприятие ощущается как прямое взаимодействие с вещами, 
+      хотя это — реконструкция на основе фотонного сигнала и обработки в мозге"
+  },
+
+  key_semantic_nodes: {
+    visual_apparency: "мир кажется прямо перед глазами, без промежуточных звеньев",
+    object_presence_feeling: "стол и дерево кажутся «данными» без участия мозга",
+    direct_perception_belief: "убеждение, что мы видим объекты напрямую",
+    unnoticed_mechanisms: "игнорирование процессов: фотон → сетчатка → мозг",
+  }
+}
+
+
+
+
 visual_perception_model: {
+
+
 
   semantic_nodes: {
     light_environment: "пространство заполняется фотонами",
@@ -113,7 +163,7 @@ visual_perception_model: {
     },
 
     stage_3: {
-        name: "Оптическая система глаза",
+      name: "Оптическая система глаза",
       components: [
       "роговица",
       "хрусталик",
@@ -134,6 +184,83 @@ visual_perception_model: {
      "Сетчатка взаимодействует только с фотонами, то есть с электромагнитными квантуемыми возмущениями, приходящими с определённой длиной волны, поляризацией, направлением и энергией.",
      "Объект сам по себе — физически «недоступен» зрению. Мы никогда не взаимодействуем с самим объектом. Только с изменённым фотонным следом, вызванным его свойствами."
     ]
+  },
+
+
+  photon_substance_interaction: {
+
+   description: 
+    "Модель описывает процесс взаимодействия фотона с веществом как причинно-следственную цепочку, 
+    в которой происходят изменения физических параметров фотона. 
+    Эти изменения фиксируются как признаки, несущие потенциальную информацию о характеристиках среды.",
+
+    entities: {
+
+     photon_parameters: [
+        энергия,
+        направление,
+        поляризация,
+        фаза,
+        спин,
+      ],
+      note: "Многомерный вектор характеристик, подверженный модификации",
+
+      substance_properties: [
+       плотность,
+       состав,
+       текстура,
+       electromagnetic_profile
+      ],
+
+      role: "Среда, с которой происходит взаимодействие"
+    },
+
+    interaction_process: {
+      name: photon_impingement,
+      input: {
+        photon,
+        surface: substance
+      },
+
+      transformation: {
+        type: parameter_modification,
+        modified_parameters: {
+          energy: shift(),
+          direction: scatter(),
+          polarization: rotate_or_flip(),
+          phase: shift_or_interfere(),
+          spin: optional_alteration()
+        }
+      },
+
+      output: modified_photon  
+    },
+
+    causality_chain: {
+      step_1: "photon contacts substance",
+      effect_1: "microinteraction at surface boundary",
+
+      step_2: "material properties influence photon parameters",
+      effect_2: "photon undergoes state change",
+
+      step_3: "new photon state = encoded interaction trace"
+    },
+
+
+    encoding_assumption: {
+     hypothesis:
+      "Изменения в параметрах фотона не случайны, а структурно связаны с характеристиками вещества,
+      с которым он взаимодействовал. Эти изменения могут быть интерпретированы как след взаимодействия.",
+     condition: if photon_after ≠ photon_before,
+     then: modified_photon_state contains embedded_structure_about(substance)
+    },
+
+
+    key_semantic_nodes: {
+     photon_impingement_event: "момент касания фотона и вещества, запускающий цепочку изменений",
+     parameter_modulation: "набор изменений, возникающих в результате взаимодействия",
+     interaction_trace: "состояние фотона после контакта, как носитель информации"
+    }
   },
 
 
