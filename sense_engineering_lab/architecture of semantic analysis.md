@@ -191,3 +191,390 @@
 `abstraction_shift_marker` - от конкретного к абстрактному: импульс → информация → модель
 `interpretive_pivot_marker` - точки смыслового поворота: не сам объект, а фотон…
 
+
+---
+
+### Шаблоны-маркеры для ручной или автоматической разметки
+
+Набор шаблонов-маркеров — универсальные паттерны, по которым можно выделять семантические узлы из текста. Это как ручной чеклист или основа для парсера.
+
+```yaml
+
+semantic_parsing_templates:
+
+  - agent_marker:
+      desc: "Объект, который выполняет действие"
+      examples: ["мы", "мозг", "фотон", "сетчатка"]
+      detection: "существительное + согласованное глагольное действие"
+
+  - action_marker:
+      desc: "Смысловое действие, указывающее на трансформацию, восприятие, интерпретацию"
+      examples: ["интерпретирует", "отражается", "кодирует", "конструирует"]
+      detection: "глаголы действия; особенно в активной форме"
+
+  - level_shift_marker:
+      desc: "Переход между уровнями описания (физика → сигнал → интерпретация)"
+      examples: ["прилетел на сетчатку", "передал импульс", "строит модель"]
+      detection: "смена агента + смена семантической рамки"
+
+  - causal_link_marker:
+      desc: "Связь между причиной и следствием или условием"
+      examples: ["именно исходя из", "в зависимости от", "по факту"]
+      detection: "вводные и союзные конструкции, связывающие смысловые блоки"
+
+  - metaphor_marker:
+      desc: "Образные или эвристические выражения"
+      examples: ["залитое пространство", "поток фотонов", "как API"]
+      detection: "наличие сравнений, визуальных образов"
+
+  - semantic_role_marker:
+      desc: "Функция объекта в рамках смысловой сцены"
+      examples: ["носитель", "посредник", "интерпретатор", "кодировщик"]
+      detection: "контекстная роль по отношению к действию (см. frame semantics)"
+
+  - abstraction_shift_marker:
+      desc: "Переход от конкретного сигнала к абстрактному смыслу"
+      examples: ["импульс → информация", "фотон → модель мира"]
+      detection: "цепочки типа A преобразуется в B, где B — более абстрактный уровень"
+
+
+```
+
+---
+
+
+### Псевдо-DSL-функции: semantic parsing API
+
+Псевдо-DSL-функции — конструкция, на которую можно натянуть анализатор: подаёшь текст, он возвращает разметку в стиле DSL.
+
+```lisp
+
+(define (extract_semantic_nodes text)
+  (segment text into sentences)
+  (for-each sentence
+    (let* (
+      (agent (detect agent_marker sentence))
+      (action (detect action_marker sentence))
+      (level (infer level_shift_marker sentence))
+      (role (infer semantic_role_marker sentence))
+      (causal (find causal_link_marker sentence))
+    )
+    (construct semantic_node
+      :agent agent
+      :action action
+      :level level
+      :role role
+      :causal_link causal
+      :text sentence))))
+
+```
+
+**Пример вывода:**
+
+```yaml
+
+  semantic_node:
+    id: node_3
+    text: "фотон столкнулся с веществом объекта, изменил свои свойства"
+    agent: "фотон"
+    action: ["столкнулся", "изменил"]
+    level: "physical_interaction"
+    role: "signal_transformer"
+    causal_link: null
+
+```
+
+---
+
+###  Расширение: шаблонный конструктор DSL-модели
+
+На основе узлов можно автоматически строить каркас DSL-модели восприятия:
+
+```lisp
+
+(generate_dsl_model semantic_nodes):
+  (define pipeline '())
+  (for-each node in semantic_nodes
+    (push pipeline
+      (format_dsl_step node)))
+  return pipeline
+
+
+```
+
+**Вывод:**
+
+```yaml
+
+  perception_pipeline:
+    - agent: photon
+      action: reflect_from_object
+      result: modified_photon
+      level: physical
+
+    - agent: retina
+      action: transduce(modified_photon)
+      result: electrical_signal
+      level: sensory
+
+    - agent: brain
+      action: construct_model(electrical_signal)
+      result: world_model
+      level: cognitive
+
+
+```
+
+---
+
+
+
+### цель — выжать из него максимум в парадигме DSL-мышления
+
+Прекрасный фокус. У нас есть один насыщенный фрагмент, и сейчас наша цель — выжать из него максимум в парадигме DSL-мышления. Разделим анализ на три уровня извлечения ценности:
+
+### I. Что ценного можно выжать из этого куска в парадигме DSL
+
+##### 1. Сценарная структура восприятия
+
+Фрагмент описывает **поток сигналов от физического события до когнитивной модели** — это идеальный кандидат для **pipeline DSL**, где каждый шаг — преобразование сигнала.
+
+→ Ценность: можно **типизировать слои мышления**, которые часто остаются интуитивными и невыраженными.
+
+---
+
+##### 2. Роли агентов как семантические классы
+
+Фотон, сетчатка, мозг — не просто слова, а архетипические роли:
+
+- фотон = носитель сигнала
+- сетчатка = сенсорный преобразователь
+- мозг = интерпретатор, моделировщик
+  
+→ Ценность: можно ввести типовую иерархию агентов, применимую и к другим системам (например, интерфейс → API → парсер → модель).
+
+---
+
+##### 3. Переходы между уровнями
+
+Фрагмент хорошо выражает **многоуровневость обработки** — физика → сигнал → смысл.
+
+→ Ценность: позволяет моделировать **архитектуру перехода от данных к знанию** 
+(data → signal → information → knowledge).
+
+---
+
+#####  4. Лексика как онтология мышления
+
+Набор глаголов и существительных здесь создаёт онтологию восприятия, которую можно положить в основу микрословаря DSL:
+
+`reflect`, `transform`, `encode`, `interpret`, `construct`
+
+→ Ценность: семантическая декомпозиция глаголов позволяет создать модель смысловой навигации.
+
+---
+
+### II. Какие DSL-модели можно построить на основе фрагмента
+
+`perception_pipeline` - канонический поток обработки сигнала
+
+```yaml
+
+  perception_pipeline:
+    - stage: physical_event
+      agent: object
+      event: emits_or_reflects(photon)
+
+    - stage: signal_transformation
+      agent: photon
+      event: interacts_with(material)
+      transform: [wavelength, polarization, direction]
+
+    - stage: reception
+      agent: retina
+      event: receive(photon)
+      transform: encode_to(electrical_signal)
+
+    - stage: interpretation
+      agent: brain
+      event: construct_model(signal)
+      output: perceived_world
+
+```
+
+
+`agent_roles` - описание смысловых ролей в системе
+
+
+```yaml
+
+agent_roles:
+  - photon:
+      type: signal_carrier
+      transforms: [encodes_surface_info]
+
+  - retina:
+      type: signal_transducer
+      transforms: [optical_signal => neural_impulse]
+
+  - brain:
+      type: semantic_interpreter
+      transforms: [signal => world_model]
+
+```
+
+
+`level_map` - карта переходов между уровнями
+
+```yaml
+
+  level_map:
+    - physical_layer:
+        entities: [object, photon]
+        operations: [interaction, reflection]
+
+    - signal_layer:
+        entities: [retina, neural_signal]
+        operations: [encoding, transmission]
+
+    - cognitive_layer:
+        entities: [brain, model]
+        operations: [interpretation, construction]
+
+```
+---
+
+
+### III. Что ещё можно построить — связи, переходы, модели
+
+**Сеть переходов (DSL-граф)**
+
+```yaml
+
+  signal_graph:
+    nodes:
+      - photon
+      - retina
+      - electrical_signal
+      - brain
+      - world_model
+
+    edges:
+      - photon -> retina: [carrier_of_modified_properties]
+      - retina -> electrical_signal: [conversion]
+      - electrical_signal -> brain: [transmission]
+      - brain -> world_model: [semantic_construction]
+
+```
+
+
+**Фрейм-вопросы для универсального применения**
+
+```yaml
+
+  dsl_query_frame:
+    - what_is_carried?: "Что передаёт агент на этом этапе?"
+    - how_is_it_transformed?: "Каким образом сигнал изменяется?"
+    - who_interprets?: "Кто распознаёт значение?"
+    - at_which_level?: "На каком уровне происходит операция?"
+
+```
+
+единый DSL-блок visual_perception.dsl, который объединяет всё, что мы извлекли из одного насыщенного фрагмента: pipeline, роли, уровни, граф и интерфейсные фреймы. Он оформлен в виде модульной архитектуры, пригодной для расширения.
+
+
+```yaml
+
+  module: visual_perception.dsl
+
+  description: >
+    Модель DSL-представления зрительного восприятия как процесса прохождения сигнала 
+    от физического взаимодействия к когнитивной интерпретации.
+
+  # ——— УРОВНИ ОБРАБОТКИ ————————————————————————
+
+  level_map:
+    - physical_layer:
+        entities: [object, photon]
+        operations: [emit, reflect, transform]
+    - signal_layer:
+        entities: [retina, neural_signal]
+        operations: [receive, encode, transmit]
+    - cognitive_layer:
+        entities: [brain, model]
+        operations: [interpret, construct]
+
+  # ——— РОЛИ АГЕНТОВ ————————————————————————————
+
+  agent_roles:
+    - photon:
+        type: signal_carrier
+        properties: [wavelength, polarization, direction]
+        comment: "Несёт изменённые параметры после столкновения с веществом"
+    - retina:
+        type: transducer
+        input: photon
+        output: neural_signal
+        comment: "Преобразует фотоны в электрические импульсы"
+    - brain:
+        type: interpreter
+        input: neural_signal
+        output: world_model
+        comment: "Конструирует когнитивную модель на основе сигнала"
+
+  # ——— СЦЕНАРНЫЙ PIPELINE ——————————————————————
+
+  perception_pipeline:
+    - step: photon_reflection
+      input: photon_from_object
+      transform: [modify_properties]
+      output: modified_photon
+      level: physical_layer
+
+    - step: retinal_encoding
+      input: modified_photon
+      transform: encode_to(neural_signal)
+      output: electrical_signal
+      level: signal_layer
+
+    - step: model_construction
+      input: electrical_signal
+      transform: interpret_and_construct
+      output: world_model
+      level: cognitive_layer
+
+  # ——— СЕТЕВОЙ ГРАФ ВЗАИМОДЕЙСТВИЯ ———————————
+
+  signal_graph:
+    nodes:
+      - photon
+      - retina
+      - electrical_signal
+      - brain
+      - world_model
+    edges:
+      - photon -> retina: [carrier_of_surface_info]
+      - retina -> electrical_signal: [signal_conversion]
+      - electrical_signal -> brain: [neural_transmission]
+      - brain -> world_model: [semantic_mapping]
+
+  # ——— ФРЕЙМ-ИНТЕРФЕЙС ВОПРОСОВ —————————————
+
+  dsl_query_frame:
+    - what_is_carried?: "Какие свойства фотон несёт после взаимодействия?"
+    - how_is_it_transformed?: "Какие преобразования происходят на каждом этапе?"
+    - who_interprets?: "Кто выступает в роли интерпретатора?"
+    - at_which_level?: "На каком уровне происходит данная операция?"
+    - what_is_constructed?: "Что является финальным продуктом обработки сигнала?"
+
+  # ——— СЛОВАРЬ ГЛАГОЛОВ-СХЕМ ————————————————
+
+  verb_ontology:
+    - reflect: "Фотон отражается от объекта"
+    - transform: "Фотон изменяет свойства"
+    - encode: "Сигнал преобразуется в нейрокод"
+    - transmit: "Передача сигнала по нервной системе"
+    - interpret: "Мозг интерпретирует импульсы"
+    - construct: "Мозг строит модель"
+
+```

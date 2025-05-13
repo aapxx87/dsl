@@ -169,11 +169,7 @@ visual_perception_model: {
 
 
 
-
-
-
-
-predictive_model_detail: {
+predictive_model: {
 
   semantic_nodes: {
 
