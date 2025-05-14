@@ -1,0 +1,39 @@
+content: {
+
+  guide_fragment_levels: {
+    ref: nodes/guide_fragment_levels.md,
+    title: "Навигация по уровням fragment_analytics",
+    description: "Пошаговое руководство по уровням сложности fragment_analytics с фокусами, вопросами и подсказками для каждого этапа — от начального до полного.",
+    levels: [0, 1, 2, 3, 4, 5, 6],
+    includes: [
+      "цель каждого уровня",
+      "используемые поля",
+      "вопросы и когнитивные подсказки"
+    ]
+  },
+
+  starter_pack_examples: {
+    ref: nodes/starter_pack_fragments_0_3.yaml,
+    title: "Шаблон разборов на уровнях 0–3",
+    description: "Разбор двух простых фрагментов (Хокинг, Сальк) на уровнях сложности от 0 до 3. Структура подходит для обучения, тренировки формулировок и логики смыслов.",
+    levels: [0, 1, 2, 3],
+    includes: [
+      "idea_summary",
+      "initial_semantics",
+      "semantic_flows",
+      "refined_nodes"
+    ]
+  },
+
+  fragment_analysis_structure: {
+    ref: nodes/fragment_analysis_levels.yaml,
+    title: "Структура всех уровней fragment_analytics",
+    description: "Формальное описание всех уровней развития анализа фрагментов — какие поля добавляются и что на каждом этапе появляется. Без пояснений и вопросов.",
+    levels: [0, 1, 2, 3, 4, 5, 6],
+    includes: [
+      "название уровня",
+      "какие поля добавляет",
+      "на какой основе строится"
+    ]
+  }
+}

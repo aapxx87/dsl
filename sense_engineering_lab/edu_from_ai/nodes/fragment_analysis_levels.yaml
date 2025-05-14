@@ -1,0 +1,56 @@
+fragment_analysis_levels:
+
+  - level: 0
+    name: fragment_analytics_lite
+    focus: "интуитивный смысловой захват без структуры"
+    includes:
+      - idea_summary
+      - key_thoughts
+      - thought_flows
+      - reflection
+
+  - level: 1
+    name: +initial_semantics
+    focus: "выделение атомарных утверждений с id"
+    adds:
+      - initial_semantics
+    builds_on: 0
+
+  - level: 2
+    name: +semantic_flows
+    focus: "связь узлов в причинные цепочки"
+    adds:
+      - semantic_flows
+    builds_on: 1
+
+  - level: 3
+    name: +refined_nodes
+    focus: "уточнение смыслов, добавление источников и комментариев"
+    adds:
+      - refined_nodes
+    builds_on: 2
+
+  - level: 4
+    name: +entities
+    focus: "введение действующих сил, мотиваций и конструкций"
+    adds:
+      - entities.agents
+      - entities.motivations
+      - entities.constructs
+    builds_on: 3
+
+  - level: 5
+    name: +interaction_layers
+    focus: "описание процессов и взаимодействий между сущностями"
+    adds:
+      - interaction_layers
+    builds_on: 4
+
+  - level: 6
+    name: fragment_analytics_full
+    focus: "сборка полной аналитической структуры для многослойных фрагментов"
+    adds:
+      - goals
+      - methodology
+      - all previous layers
+    builds_on: 5

@@ -1,0 +1,110 @@
+fragments_starter_pack:
+
+  - id: fragment_01
+    source:
+      author: "Stephen Hawking"
+      fragment: "Мы — просто развитые порождения обезьян на маленькой планете одной из звёзд. Но мы понимаем Вселенную. Это делает нас особенными."
+
+    level_0:
+      idea_summary: "Человеческая уникальность не в происхождении, а в способности понимать Вселенную."
+      key_thoughts:
+        - "Люди произошли от приматов"
+        - "Мы живём на маленькой планете"
+        - "Несмотря на это, мы понимаем Вселенную"
+        - "Понимание делает нас особенными"
+      thought_flows:
+        - "Приматное происхождение → умение мыслить"
+        - "Обычное положение во Вселенной → необычное мышление"
+        - "Понимание → особенность"
+      reflection: "Простой фрейм об осмысленности: ценность человека — не в статусе, а в способности постигать сложное."
+
+    level_1:
+      initial_semantics:
+        - id: "human_origin"
+          statement: "Люди произошли от приматов"
+        - id: "planetary_context"
+          statement: "Мы живём на маленькой планете вокруг одной из звёзд"
+        - id: "understanding_universe"
+          statement: "Человечество способно понимать Вселенную"
+        - id: "uniqueness_by_understanding"
+          statement: "Именно способность к пониманию делает людей особенными"
+
+    level_2:
+      semantic_flows:
+        - from: "human_origin"
+          to: "understanding_universe"
+          type: "contrast"
+          comment: "Несмотря на биологическое происхождение, возникла способность к познанию"
+        - from: "planetary_context"
+          to: "understanding_universe"
+          type: "contrast"
+          comment: "Незначительное положение не мешает глубокому пониманию"
+        - from: "understanding_universe"
+          to: "uniqueness_by_understanding"
+          type: "supports"
+          comment: "Понимание Вселенной и есть наша уникальность"
+
+    level_3:
+      refined_nodes:
+        - id: "understanding_universe"
+          node: "Понимание устройства Вселенной — отличительный признак человечества"
+          source: "Но мы понимаем Вселенную"
+          comment: "Понимание здесь показано как прорыв к особому статусу"
+          relates_to: "understanding_universe"
+        - id: "uniqueness_by_understanding"
+          node: "Уникальность человека определяется не положением во Вселенной, а разумом"
+          source: "Это делает нас особенными"
+          comment: "Не сила, не происхождение, а интеллект выделяет нас"
+          relates_to: "uniqueness_by_understanding"
+
+
+  - id: fragment_02
+    source:
+      author: "Jonas Salk"
+      fragment: "Эволюция — не соревнование, а сотрудничество. Те, кто выживает, не самые сильные, а те, кто лучше взаимодействует."
+
+    level_0:
+      idea_summary: "Суть эволюции — не борьба, а способность к кооперации."
+      key_thoughts:
+        - "Эволюция — это не соревнование"
+        - "Выживают не самые сильные"
+        - "Выживают те, кто взаимодействует лучше"
+        - "Кооперация важнее силы"
+      thought_flows:
+        - "Соревновательная модель → опровергается"
+        - "Кооперация → основа выживания"
+        - "Выживание → связано с взаимодействием"
+      reflection: "Фраза меняет ракурс: успех — это не победа над другими, а способность быть с другими."
+
+    level_1:
+      initial_semantics:
+        - id: "evolution_not_competition"
+          statement: "Эволюция — это не соревнование"
+        - id: "survival_not_strength"
+          statement: "Выживают не самые сильные"
+        - id: "survival_through_cooperation"
+          statement: "Выживают те, кто лучше взаимодействует"
+
+    level_2:
+      semantic_flows:
+        - from: "evolution_not_competition"
+          to: "survival_through_cooperation"
+          type: "reframing"
+          comment: "Формулируется альтернативное понимание эволюционного успеха"
+        - from: "survival_not_strength"
+          to: "survival_through_cooperation"
+          type: "contrast"
+          comment: "Опровержение старой модели через противопоставление силы и кооперации"
+
+    level_3:
+      refined_nodes:
+        - id: "survival_through_cooperation"
+          node: "Способность к сотрудничеству определяет эволюционное преимущество"
+          source: "те, кто лучше взаимодействует"
+          comment: "Кооперация — это активная стратегия выживания"
+          relates_to: "survival_through_cooperation"
+        - id: "evolution_not_competition"
+          node: "Эволюция — это не борьба, а совместное развитие"
+          source: "Эволюция — не соревнование"
+          comment: "Формулируется новый взгляд на эволюционные механизмы"
+          relates_to: "evolution_not_competition"
