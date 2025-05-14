@@ -1,0 +1,213 @@
+semantic_fragment_analysis_procedure: {
+  steps: [
+
+    {
+      step: "Прочитать фрагмент вслух (мысленно или реально)",
+      goal: "Погрузиться в интонацию, ритм и эмоциональный фон",
+      comment: "Это помогает уловить скрытые акценты и напряжения"
+    },
+
+    {
+      step: "Сформулировать интуитивный посыл фрагмента",
+      goal: "Выразить в 1–2 предложениях, что хотел донести автор",
+      output: "preliminary_summary",
+      example: "Люди бегут от страха в вымышленный, безопасный мир — это не глупость, а механизм защиты"
+    },
+
+    {
+      step: "Выделить ключевых агентов и их взаимодействующие силы",
+      goal: "Определить действующих субъектов, движущие силы и внешние триггеры",
+      output: "entities.agents",
+      example: {
+        core: ["people"],
+        forces: ["fear"],
+        triggers: {
+          negative_events: ["войны", "кризисы"]
+        }
+      }
+    },
+
+    {
+      step: "Выделить мотивации и внутренние потребности",
+      goal: "Выявить, какие внутренние состояния побуждают к действиям",
+      output: "entities.motivations",
+      example: {
+        escape_needs: ["предчувствия гибели", "экзистенциальные страхи"]
+      }
+    },
+
+    {
+      step: "Выделить конструкции как отклик на мотивации",
+      goal: "Описать, какие ментальные или поведенческие конструкции создаются для защиты",
+      output: "entities.constructs",
+      example: {
+        fictitious_world: {
+          activities: ["игры"],
+          skills: ["вождение"],
+          education: "статьи, доклады"
+        }
+      }
+    },
+
+    {
+      step: "Извлечь первичные смысловые узлы",
+      goal: "Записать атомарные смысловые утверждения до их интерпретации",
+      output: "initial_semantics",
+      example: {
+        id: "fear_presence",
+        statement: "Люди находятся в состоянии постоянного внутреннего страха"
+      },
+      tips: [
+        "Формулируй как обобщение, а не цитату",
+        "Избегай абстракций без действия"
+      ]
+    },
+
+    {
+      step: "Уточнить узлы и добавить контекст",
+      goal: "Для каждого смыслового узла указать источник, интерпретацию и комментарий",
+      output: "refined_nodes",
+      example: {
+        id: "fear_as_systemic_force",
+        node: "Страх — системообразующий фактор, определяющий поведение",
+        source: "жили в постоянном страхе",
+        comment: "Фоновый страх — не событие, а атмосфера"
+      }
+    },
+
+    {
+      step: "Построить причинно-смысловые связи между узлами",
+      goal: "Связать узлы в логические цепочки (что из чего вытекает)",
+      output: "semantic_flows",
+      example: {
+        from: "fear_sources",
+        to: "escape_needs",
+        type: "cause → motivation",
+        comment: "Неопределённость усиливает потребность в бегстве"
+      }
+    },
+
+    {
+      step: "Развернуть уровни смысловых взаимодействий",
+      goal: "Показать, как агенты, мотивации и конструкции организуются в целостные процессы",
+      output: "interaction_layers",
+      example: {
+        id: "psychological_escape",
+        level: "Психологическая защита через бегство",
+        entities_involved: {
+          agents: ["people"],
+          motivations: ["escape_needs"],
+          constructs: ["fictitious_world"]
+        },
+        dynamics: "Бегство оформляется как создание безопасного мира"
+      }
+    },
+
+    {
+      step: "Определить жанровую и смысловую рамку текста",
+      goal: "Уточнить тип дискурса и мета-уровень (художественный, философский и т.д.)",
+      output: "text_context_type",
+      options: ["художественный", "публицистический", "эссеистский"]
+    },
+
+    {
+      step: "Сформулировать личную рефлексию",
+      goal: "Зафиксировать, как фрагмент повлиял на понимание, вызвал отклик или пересмотр",
+      output: "reflection",
+      format: "1–3 предложения"
+    },
+
+    {
+      step: "Обернуть всё в fragment_analytics_template",
+      goal: "Собрать все слои анализа в единую, структурированную модель для переиспользования"
+    }
+
+  ]
+}
+
+
+
+
+fragment_analytics_template: {
+
+  source: {
+    author: "AUTHOR_NAME",
+    book: "BOOK_TITLE",
+    chapter: "CHAPTER_TITLE",
+    fragment: "Фрагмент текста (цитата или параграф)"
+  },
+
+  goals: {
+    understand_author_intent: "Понять ключевые идеи и посылы автора через семантический разбор",
+    practice_semantic_engineering: "Тренировать навык смысловой декомпозиции на литературных формах",
+    formalize_analysis_pipeline: "Отработать и зафиксировать процедуру разбора для повторного использования"
+  },
+
+  methodology: [
+    { key: "initial_reading", step: "Прочитать фрагмент и зафиксировать интуитивный посыл" },
+    { key: "extract_agents", step: "Выделить ключевых агентов и движущие силы" },
+    { key: "extract_semantic_nodes", step: "Выделить первичные смысловые узлы (initial semantics)" },
+    { key: "build_semantic_flows", step: "Построить причинно-смысловые связи между узлами" },
+    { key: "map_interaction_layers", step: "Разложить смысл по слоям взаимодействий" },
+    { key: "analyze_agent_dynamics", step: "Выделить природу взаимодействий между сущностями" },
+    { key: "formalize_analysis", step: "Оформить разбор в структурированный формат" }
+  ],
+
+  entities: {
+    agents: {
+      core: [],
+      forces: [],
+      triggers: {}
+    },
+    motivations: {
+      escape_needs: [],
+      missing_support: []
+    },
+    constructs: {
+      fictitious_world: {
+        activities: [],
+        skills: [],
+        education: ""
+      }
+    }
+  },
+
+  initial_semantics: [
+    { id: "xxx", statement: "..." }
+  ],
+
+  refined_nodes: [
+    {
+      id: "xxx",
+      node: "...",
+      source: "...",
+      comment: "...",
+      relates_to: "id из initial_semantics"
+    }
+  ],
+
+  interaction_layers: [
+    {
+      id: "xxx",
+      level: "...",
+      description: "...",
+      entities_involved: {
+        agents: [],
+        triggers: [],
+        motivations: [],
+        constructs: []
+      },
+      dynamics: "..."
+    }
+  ],
+
+  semantic_flows: [
+    {
+      from: "initial_semantics.id",
+      to: "initial_semantics.id",
+      type: "тип связи (например: cause → behavior)",
+      comment: "..."
+    }
+  ]
+
+}
