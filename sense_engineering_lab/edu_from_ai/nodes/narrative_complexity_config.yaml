@@ -1,0 +1,92 @@
+narrative_complexity_configurator:
+
+  description: |
+    Фреймворк для оценки и генерации нарративных фрагментов по степени смысловой, структурной, стилистической и когнитивной сложности. Используется для:
+    - оценки сложности фрагмента при разборе;
+    - генерации фрагментов с заданной конфигурацией параметров;
+    - адаптации упражнений по уровням сложности для тренировки DSL-парсинга.
+
+  parameters:
+
+    semantic_density:
+      title: "Семантическая плотность"
+      description: "Сколько смыслов вложено в единицу текста (1-2 предложения)? Насколько насыщены фразы значениями, обобщениями, понятиями?"
+      scale: [very_low, low, medium, high, very_high]
+
+    meaning_layers:
+      title: "Количество смысловых слоёв"
+      description: "Сколько уровней можно вычленить: явный текст, подстрочник, метафора, философский слой, социальный комментарий и т.п."
+      scale: [one, two, three, four_or_more]
+
+    structural_complexity:
+      title: "Структурная комплексность"
+      description: "Есть ли в тексте композиционные переходы, сцепление смыслов, усложнение мысли? Или он плоский и прямой?"
+      scale: [linear, slightly_branched, branched, nested, recursive]
+
+    metaphorical_content:
+      title: "Наличие метафор и образов"
+      description: "Присутствуют ли метафоры, образы, поэтические конструкции, или текст буквальный?"
+      scale: [none, sparse, occasional, frequent, dominant]
+
+    philosophical_charge:
+      title: "Философская нагруженность"
+      description: "Насколько текст поднимает философские вопросы, онтологию, знание, смысл жизни и т.п.?"
+      scale: [none, subtle, implicit, explicit, central]
+
+    cultural_allusions:
+      title: "Культурные аллюзии"
+      description: "Есть ли в тексте ссылки на мифы, литературу, историю, религию?"
+      scale: [none, few, indirect, direct, embedded]
+
+    transition_opacity:
+      title: "Неявность смысловых переходов"
+      description: "Насколько связки между частями текста прозрачны? Пропущены ли логические мостики?"
+      scale: [clear, semi_clear, suggestive, opaque, deliberately_missing]
+
+    abstraction_level:
+      title: "Уровень абстрактности"
+      description: "Текст говорит на уровне конкретных образов, понятий или чистых абстракций?"
+      scale: [concrete, descriptive, conceptual, theoretical, abstract]
+
+    emotional_tone:
+      title: "Эмоциональный тон"
+      description: "Насколько текст окрашен эмоционально: сухой, умеренно вовлекающий, экспрессивный?"
+      scale: [neutral, restrained, moderate, expressive, affective]
+
+    rhetorical_form:
+      title: "Риторическая форма"
+      description: "Это утверждение, размышление, диалог, парадокс, афоризм и т.п.?"
+      scale: [declarative, reflective, narrative, paradoxical, aphoristic]
+
+  templates:
+
+    fragment_analysis_request:
+      purpose: "Запрос к нейросети: анализировать данный фрагмент по параметрам сложности"
+      format:
+        fragment: "<текст>"
+        request: "Оцени данный фрагмент по следующим параметрам (semantic_density, meaning_layers и т.д.), используя шкалы и краткое пояснение."
+
+    fragment_difficulty_summary:
+      purpose: "Шаблон выдачи нейросетью оценки сложности фрагмента"
+      format:
+        summary:
+          total_level: "(низкий / средний / высокий)"
+          profile:
+            semantic_density: "high"
+            meaning_layers: "two"
+            structural_complexity: "branched"
+            metaphorical_content: "occasional"
+            "(и т.д. по всем параметрам)"
+          comments:
+            - "Фрагмент содержит скрытые переходы между уровнями рассуждения."
+            - "Используются философские конструкции, но поданы просто."
+
+    generation_prompt_template:
+      purpose: "Шаблон запроса к генерации фрагмента с заданным уровнем сложности"
+      format:
+        request: "Сгенерируй короткий фрагмент (2–3 предложения), который будет соответствовать следующим параметрам сложности:"
+        config:
+          semantic_density: "medium"
+          abstraction_level: "conceptual"
+          metaphorical_content: "none"
+          ... (и т.д.)
