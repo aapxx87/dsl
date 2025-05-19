@@ -76,7 +76,7 @@ narrative_complexity_configurator:
             meaning_layers: "two"
             structural_complexity: "branched"
             metaphorical_content: "occasional"
-            "(и т.д. по всем параметрам)"
+          
           comments:
             - "Фрагмент содержит скрытые переходы между уровнями рассуждения."
             - "Используются философские конструкции, но поданы просто."
@@ -89,4 +89,4 @@ narrative_complexity_configurator:
           semantic_density: "medium"
           abstraction_level: "conceptual"
           metaphorical_content: "none"
-          ... (и т.д.)
+          
