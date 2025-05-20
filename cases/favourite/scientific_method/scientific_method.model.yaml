@@ -1,0 +1,98 @@
+method: scientific_method
+
+meta:
+  domain: knowledge_discovery
+  purpose: structured_truth_seeking
+  principles:
+    - empiricism
+    - falsifiability
+    - skepticism
+    - replicability
+
+phases:
+  - phase: observation
+    input: raw_phenomena
+    action: perceive_and_record
+    output: empirical_facts
+    notes: "Отправная точка — наблюдение за явлениями без предварительных теорий"
+
+  - phase: question_formulation
+    input: empirical_facts
+    action: generate_testable_questions
+    output: hypotheses
+    notes: "Формулируются проверяемые вопросы на основе наблюдений"
+
+  - phase: hypothesis_construction
+    input: questions
+    action: build_explanatory_models
+    output: testable_models
+    criteria:
+      - coherence
+      - simplicity
+      - explanatory_power
+
+  - phase: experimentation
+    input: testable_models
+    action: design_and_run_experiments
+    output: experimental_data
+    control: variables_isolated
+    validation: statistical_significance
+
+  - phase: analysis
+    input: experimental_data
+    action: compare_with_predictions
+    output: confirmation_or_refutation
+    criteria:
+      - consistency_with_model
+      - presence_of_anomalies
+
+  - phase: revision
+    input: analysis_results
+    action: refine_or_replace_hypothesis
+    output: updated_theory
+    loop: hypothesis_construction
+
+  - phase: communication
+    input: validated_models
+    action: publish_results
+    output: peer-reviewed_knowledge
+    format:
+      - papers
+      - presentations
+      - data_sets
+
+attitudes:
+  - critical_thinking
+  - openness_to_revision
+  - tolerance_for_uncertainty
+  - avoidance_of_dogma
+  - pursuit_of_falsification
+  - intellectual_honesty
+
+failure_modes:
+  - confirmation_bias
+  - overfitting
+  - underdetermination
+  - motivated_reasoning
+  - cherry_picking
+
+feedback_loops:
+  - type: self_correction
+    trigger: anomalous_data
+    action: hypothesis_revision
+
+  - type: cross_validation
+    sources:
+      - independent_teams
+      - meta_analyses
+
+  - type: technological_push
+    influence: new_tools_enable_new_experiments
+
+  - type: conceptual_shift
+    trigger: paradigm_conflict
+    outcome: scientific_revolution
+
+
+
+

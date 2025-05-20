@@ -11,7 +11,7 @@ thinking_frame_model: {
   steps_nodes: {
 
     {
-      id: _assumptions,
+      id: assumptions,
       title: "Скрытые допущения",
       summary: "Что ты считаешь само собой разумеющимся, даже не осознавая этого. Молчаливые основания мышления.",
       ref: nodes/assumptions.yaml
@@ -53,10 +53,10 @@ thinking_frame_model: {
     },
 
     {
-      id: _falsifiability_criteria,
+      id: falsifiability_criteria,
       title: "Критерии фальсификации",
       summary: "Что должно произойти, чтобы ты признал гипотезу ошибочной? Условия, при которых она рушится.",
-      ref: nodes/falsifiability_criteria.yaml
+      ref: nodes/falsifiability_criteria.yaml,
     },
 
     {
@@ -79,5 +79,9 @@ thinking_frame_model: {
       summary: "Следующие шаги: что проверить, кому задать вопрос, где искать выход из тупика.",
       ref: nodes/recomendations.yaml
     }
-  }
+  },
+
 }
+
+
+
