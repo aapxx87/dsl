@@ -1,0 +1,115 @@
+composition: {
+
+  core_concept: 
+   "Игра в бисер как форма интеграции и структурирования культурных смыслов в единую интеллектуальную композицию",
+
+  steps: [
+    initiating,
+    collect_semantic_artefacts,
+    create_links,
+    compose_structure,
+    present_game,
+    reflect_on_result
+  ],
+
+  action_types: [
+    select_theme,       # выбор идеи
+    retrieve_artefact,  # поиск элемента
+    establish_link,     # создание связи
+    transform_context,  # изменение смысла через связи
+    structure,          # организация в композицию
+    externalize,        # предъявление или описание
+    reflect            # рефлексия и переосмысление
+  ],
+
+  artefact_flow: {
+    initiating: theme,
+    collect_semantic_artefacts: artefact_pool,
+    create_links: semantic_graph,
+    compose_structure: composition,
+    present_game: presentation,
+    reflect_on_result: insight,
+  },
+
+  thinking_modes: {
+    initiating: divergent_intentional,
+    collect_semantic_artefacts: associative_search,
+    create_links: relational_mapping,
+    compose_structure: integrative_design,
+    present_game: narrative_externalization,
+    reflect_on_result: meta_reflection
+  },
+
+
+  steps_meta: {
+
+    initiating: {
+      input: "внутренний импульс, интерес, вопрос",
+      output: "тема партии",
+      action_type: "выбор фокуса",
+      thinking_mode: "дивергентное намерение",
+      description:
+       "Игрок осознанно или интуитивно задаёт тему будущей партии: это может быть идея, философский вопрос, образ, конфликт или даже мелодия. Эта тема станет ядром, вокруг которого будет строиться вся композиция."
+    },
+
+
+    collect_semantic_artefacts: {
+      input: "тема",
+      output: "набор культурных элементов",
+      action_type: "поиск и отбор",
+      thinking_mode: "ассоциативный сбор",
+      description:
+        "На основе выбранной темы игрок ищет значимые фрагменты культуры: цитаты, образы, понятия, символы, математические формулы, музыкальные фразы. Элементы не обязательно должны быть связаны напрямую — важна их потенциальная смысловая насыщенность."
+    },
+
+
+    create_links: {
+      input: "набор элементов",
+      output: "граф связей",
+      action_type: "связывание элементов",
+      thinking_mode: "смысловое сопоставление",
+      substeps: {
+        detect_relation: "поиск связи",
+        qualify_link: "типизация связи",
+        type: (analogy, causality, contrast, etc.),
+        validate_link: "проверка обоснованности"
+      },
+
+      description:
+        "Игрок выявляет и устанавливает связи между элементами: аналогии, парадоксы, метафоры, контрасты, причинно-следственные связи. Каждый элемент рассматривается в контексте других, и постепенно выстраивается сеть смыслов — основа будущей структуры."
+    },
+
+
+    compose_structure: {
+      input: "граф связей",
+      output: "целостная композиция",
+      action_type: "сборка структуры",
+      thinking_mode: "архитектурное мышление",
+      description:
+        "На этом этапе игрок оформляет партию как целостную структуру. Выбирается форма (например, фуга, круг, контрапункт), определяется внутренняя логика, эстетический ритм, композиционная глубина. Смысловые связи организуются в единую мыслительную ткань."
+    },
+
+
+    present_game: {
+      input: "композиция",
+      output: "внешняя форма партии",
+      action_type: "предъявление",
+      thinking_mode: "нарратив и подача",
+      description:
+        "Игрок ментально или внешне (письменно, устно) озвучивает структуру партии. Это может быть философское эссе, диалог, лекция или внутренняя фиксация. Важно: передача — не только информации, но и интонации, ритма, культурного резонанса."
+    },
+
+
+    reflect_on_result: {
+      input: "пройденная партия",
+      output: "инсайты и новые импульсы",
+      action_type: "осмысление",
+      thinking_mode: "мета-позиция",
+      description:
+        "Завершающий этап — рефлексия над партией. Что открылось в процессе? Какие узлы оказались слабыми? Какие связи — неожиданными? Какие новые вопросы возникли? Рефлексия замыкает цикл и может стать началом новой игры."
+    }
+  }
+}
+
+
+
