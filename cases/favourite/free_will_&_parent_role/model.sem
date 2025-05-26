@@ -1,0 +1,175 @@
+model childhood_encoding_map {
+
+  title: "Карта кодировки личности в детстве"
+
+  overview:
+
+    description: "Эта карта показывает, какие элементы личности закладываются в детстве, через какие поведенческие и коммуникативные механизмы они передаются, и как влияют на долгосрочные качества мышления, поведения и эмоциональной жизни"  
+
+    core_areas: {
+
+      attachment_and_security: {
+       label: "Привязанность и базовая безопасность"
+       description: "Отношения с основными фигурами заботы формируют чувство защищённости и доверия к миру."
+
+       channels: [
+        physical_touch 
+        availability_of_parent 
+        emotional_containment]
+
+       encodes: [
+        base_trust_or_anxiety 
+        readiness_for_exploration 
+        sense_of_self-worth]
+
+       long_term_effects: [
+        style_of_relationships 
+        emotional_regulation_capacity]
+
+       ref: /nodes/c_e_map/c_a/a_a_s/attachment_and_security.sem
+
+       semantic_map: {
+        
+          [physical_touch]:channel
+            as "Прикосновение как способ утешения, безопасности, телесной связи"
+            => [base_trust_or_anxiety]:encode
+              as "Мир как безопасный / угрожающий"
+              => [style_of_relationships]:effect
+                as "Близость как поддержка / источник боли"
+            => [sense_of_self-worth]:encode
+              as "Я — заслуживающий любви"
+              => [emotional_regulation_capacity]:effect
+                as "Умение выдерживать чувства и быть в теле"
+
+            # healthy: мягкие объятия, присутствие рядом, утешающее прикосновение
+            # unhealthy: избегание тела, контакт только функциональный, грубое прикосновение
+
+          [availability_of_parent]:channel
+            as "Эмоциональная и физическая доступность родителя"
+            => [readiness_for_exploration]:encode
+              as "Можно отходить от родителя и возвращаться"
+              => [style_of_relationships]:effect
+                as "Гибкость и доверие в отношениях"
+
+            # healthy: родитель вовлечён, отзывается на плач, остаётся в трудностях
+            # unhealthy: физически рядом, но эмоционально отсутствует, обесценивает сигналы
+
+          [emotional_containment]:channel
+            as "Способность выдерживать эмоции ребёнка и помогать ему с ними быть"
+            ~> [base_trust_or_anxiety]:encode
+            ~> [readiness_for_exploration]:encode
+            ~> [sense_of_self-worth]:encode
+
+            # healthy: родитель спокойно говорит «я рядом», помогает прожить слёзы
+            # unhealthy: «перестань ныть», «я сейчас уйду», злость на чувства ребёнка
+        }
+      }
+
+
+
+
+    - area: LanguageOfThinking
+      label: Язык и структура мышления
+      description:
+        То, как взрослые объясняют мир ребёнку, становится основой его внутреннего диалога и логики.
+
+      channels:
+        adult_explanations: "Как взрослые объясняют события: причинно, обобщённо, с эмоцией"
+        cause_and_effect_exposure: "Привычка замечать связи между действиями и их последствиями"
+        metaphors_used_in_family: "Какими образами и примерами взрослые описывают сложное"
+
+      encodes:
+        format_of_reasoning: "Структура рассуждений: цепочная, ассоциативная, фрагментарная"
+        pattern_of_explaining_world: "Как ребёнок учится интерпретировать происходящее"
+        internal_dialogue_style: "Тон и характер внутреннего монолога — поддерживающий или обвиняющий"
+
+      long_term_effects:
+        critical_thinking: "Способность анализировать, видеть причины, сомневаться"
+        narrative_identity: "Образ себя, встроенный в историю: кто я, откуда, куда иду"
+        type_of_inner_voice: "Как звучит внутренний голос — критикует, подбадривает или молчит"
+
+    - area: EmotionalEncoding
+      label: Эмоциональная грамотность и шаблоны
+      description: >
+        То, как взрослые отражают, принимают и управляют эмоциями ребёнка, определяет его эмоциональную доступность и устойчивость.
+
+      channels:
+        mirrored_emotions: "Понимает ли родитель, что чувствует ребёнок, и отражает ли это"
+        reaction_to_child's_expression: "Как реагируют на злость, плач, страх — обесценивание или принятие"
+        tone_of_response: "Интонации, которые формируют безопасную или напряжённую среду"
+
+      encodes:
+        what_is_ok_to_feel: "Какие эмоции разрешены, а какие подавляются или наказываются"
+        emotional_vocabulary: "Насколько ребёнок может назвать и различать свои чувства"
+        shame_and_guilt_templates: "При каких действиях возникает стыд, вина и как они обрабатываются"
+
+      long_term_effects:
+        emotional_suppression_or_freedom: "Будет ли человек открыт в эмоциях или сдержан и отрезан от них"
+        defense_mechanisms: "Формы защиты: уход, нападение, избегание, рационализация"
+        empathy_level: "Насколько человек чувствует других и может на них отреагировать"
+
+    - area: SelfWorthAndAgency
+      label: Самоценность и чувство влияния
+      description: >
+        Ребёнок формирует отношение к себе и своим действиям на основе обратной связи от родителей и свободы пробовать.
+
+      channels:
+        praise_and_critique_ratio: "Пропорция между похвалой и критикой"
+        expectations_and_support: "Есть ли ожидания развития и одновременно поддержка"
+        autonomy_granted: "Разрешается ли ребёнку принимать решения и учиться на ошибках"
+
+      encodes:
+        baseline_self_value: "Ощущение 'я в порядке' — базовое чувство собственной ценности"
+        locus_of_control: "Чувство: я влияю на жизнь (внутренний локус) или всё зависит от внешнего (внешний локус)"
+        fear_of_failure_or_experimentation: "Боится ли ребёнок ошибок или видит в них путь развития"
+
+      long_term_effects:
+        confidence: "Готовность действовать несмотря на сомнения"
+        ambition_vs_avoidance: "Потребность реализовываться или избегать риска"
+        resilience: "Устойчивость перед трудностями, способность восстанавливаться"
+
+    - area: SocialNormsAndBoundaries
+      label: Социальные нормы и границы
+      description: >
+        Ребёнок учится, как взаимодействовать с другими, какие границы допустимы и как вести себя в конфликте.
+
+      channels:
+        modeling_of_conflict_resolution: "Как взрослые решают споры — криком, молчанием, договором"
+        boundaries_of_self_and_other: "Есть ли уважение к телесным и эмоциональным границам"
+        handling_of_mistakes: "Как реагируют на ошибки — наказание, обучение, игнорирование"
+
+      encodes:
+        rules_of_belonging: "Что нужно делать, чтобы быть принятым в семье/группе"
+        personal_space_and_borders: "Понимание, где заканчиваюсь я и начинается другой"
+        response_to_transgressions: "Как реагировать на нарушения и быть уверенным в себе"
+
+      long_term_effects:
+        ability_to_negotiate: "Умение договариваться, не теряя себя"
+        assertiveness_vs_submission: "Готовность отстаивать себя или подчиняться"
+        boundary_integrity: "Сохранение личных границ в отношениях"
+
+    - area: MoralAndValueEncoding
+      label: Мораль и ценности
+      description: >
+        Ценности закладываются не словами, а стилем жизни, объяснениями правил и личным примером.
+
+      channels:
+        implicit_values_in_daily_interaction: "Какие действия одобряются и поощряются родителями"
+        how_rules_are_explained_and_enforced: "Объясняются ли запреты или применяются авторитарно"
+        value_in_conflict_with_emotions: "Что важнее — быть честным или 'не расстраивать родителей'?"
+
+      encodes:
+        justice_template: "Понимание справедливости — по отношению к себе и к другим"
+        internal_moral_code: "Что считается 'правильным', даже если никто не смотрит"
+        double_standards_or_integrity: "Есть ли несоответствие между словом и делом у взрослых"
+
+      long_term_effects:
+        moral_conflict_capacity: "Способность не теряться, когда ценности сталкиваются"
+        shame_proneness_vs_ethical_resilience: "Склонность к самообвинению или способность выдерживать вину"
+        authenticity: "Способность жить в соответствии с собой, а не в угоду внешнему"
+
+  }
+
+
+
+}
