@@ -1,0 +1,133 @@
+
+<language_of_thinking>
+
+  <adult_explanations:channel>
+    as "Способ, которым взрослые объясняют события, поведение и явления ребёнку"
+
+    => [format_of_reasoning]:encode
+      as "Формируется структура мышления — цепная, ассоциативная или фрагментарная"
+      => [critical_thinking]:effect
+         as "Способность видеть связи, задавать вопросы, сомневаться"
+
+    => [internal_dialogue_style]:encode
+      as "Голос, с которым ребёнок научается говорить с собой"
+      => [type_of_inner_voice]:effect
+         as "Внутренний голос — поддержка, критик или пустота"
+
+    includes: {
+      types:
+        - logical_explanation: "Пошаговое объяснение происходящего"
+        - emotional_coloring: "Оценка: 'люди злые', 'это несправедливо'"
+        - silence_or_evasion: "Отказ объяснять: 'сам поймёшь'"
+      purpose: "Формируют базовый шаблон интерпретации мира и себя"
+    }
+
+    healthy_patterns: {
+      examples:
+        - "Ребёнок спрашивает: 'Почему он кричал?' — родитель: 'Похоже, он испугался. Бывает, что люди так выражают свои чувства.'"
+    }
+
+    unhealthy_patterns: {
+      patterns:
+        - dogmatic_formulas: "Не обсуждаются: 'так надо', 'жизнь — боль'"
+        - blame_shift: "Перевод фокуса: 'это всё из-за тебя'"
+      examples:
+        - "Ребёнок: 'Почему ты злишься?' — родитель: 'Из-за тебя у меня вся жизнь наперекосяк!'"
+    }
+
+    risks: {
+      consequences:
+        - fixed_thinking: "Мыслительные схемы — жёсткие, не допускают иного взгляда"
+        - internalized_blame: "Внутренний голос обвиняет при любом несоответствии"
+    }
+
+  </adult_explanations:channel>
+
+
+  <cause_and_effect_exposure:channel>
+    as "Присутствие или отсутствие привычки связывать действия с последствиями"
+
+    => [pattern_of_explaining_world]:encode
+      as "Способ интерпретировать события: с пониманием связей или реактивно"
+      => [critical_thinking]:effect
+         as "Умение видеть контекст, прогнозировать, делать выводы"
+
+    includes: {
+      types:
+        - consequence_discussion: "Объяснение 'что из чего следует'"
+        - reflection_practice: "Моделирование: 'а что мог бы сделать иначе?'"
+        - warning_vs_explanation: "Разница между 'будет больно' и 'я объясню, почему это опасно'"
+      purpose: "Развивает ощущение логичности мира и внутреннюю причинность"
+    }
+
+    healthy_patterns: {
+      examples:
+        - "Ребёнок разлил сок — родитель: 'Если сильно трясёшь, может пролиться. Давай вытрем вместе.'"
+    }
+
+    unhealthy_patterns: {
+      patterns:
+        - punishment_without_reason: "Наказание без объяснения причин"
+        - fear_logic: "'Не уберёшь — попадёшь в больницу!'"
+      examples:
+        - "Ребёнок спрашивает: 'Почему нельзя?' — родитель: 'Потому что я сказал!'"
+    }
+
+    risks: {
+      consequences:
+        - magical_thinking: "Мир кажется случайным, пугающим или непредсказуемым"
+        - learned_helplessness: "Потеря веры в возможность влиять на происходящее"
+    }
+
+  </cause_and_effect_exposure:channel>
+
+
+  <metaphors_used_in_family:channel>
+    as "Образы и аналогии, которыми взрослые описывают мир, людей и чувства"
+
+    => [pattern_of_explaining_world]:encode
+      as "Закрепляются образные рамки понимания мира"
+      => [narrative_identity]:effect
+         as "Собственный образ в истории и система координат"
+
+    => [internal_dialogue_style]:encode
+      as "Образы и метафоры становятся частью внутреннего голоса"
+      => [type_of_inner_voice]:effect
+         as "Внутренний язык — обвиняющий, поддерживающий, описательный"
+
+    includes: {
+      types:
+        - animal_roles: "'ты как сова', 'как ёжик', 'мамонтёнок'"
+        - moral_metaphors: "'жизнь — борьба', 'любовь — награда'"
+        - identity_images: "'наш гений', 'наш неудачник'"
+      purpose: "Метафоры кодируют представления о себе, других и законах мира"
+    }
+
+    healthy_patterns: {
+      examples:
+        - "Ребёнок расстроен — родитель: 'Это как облако — пришло и уйдёт. Посидим под ним вместе.'"
+    }
+
+    unhealthy_patterns: {
+      patterns:
+        - identity_locking: "Закрепление роли: 'ты у нас капризуля'"
+        - fear-based_metaphors: "'Дети как губки — всё впитывают, не кричи!'"
+      examples:
+        - "При страхе — родитель: 'Не реви как девчонка!'"
+    }
+
+    risks: {
+      consequences:
+        - metaphorical_cages: "Внутренние образы становятся ограничивающими идентичность"
+        - symbolic_shame: "Носитель метафоры как источник стыда ('ненормальный', 'не такой')"
+    }
+
+  </metaphors_used_in_family:channel>
+
+</language_of_thinking>
+
+
+
+
+
+

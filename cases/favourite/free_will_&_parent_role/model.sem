@@ -28,65 +28,36 @@ model childhood_encoding_map {
 
        ref: /nodes/c_e_map/c_a/a_a_s/attachment_and_security.sem
 
-       semantic_map: {
-        
-          [physical_touch]:channel
-            as "Прикосновение как способ утешения, безопасности, телесной связи"
-            => [base_trust_or_anxiety]:encode
-              as "Мир как безопасный / угрожающий"
-              => [style_of_relationships]:effect
-                as "Близость как поддержка / источник боли"
-            => [sense_of_self-worth]:encode
-              as "Я — заслуживающий любви"
-              => [emotional_regulation_capacity]:effect
-                as "Умение выдерживать чувства и быть в теле"
+      }
 
-            # healthy: мягкие объятия, присутствие рядом, утешающее прикосновение
-            # unhealthy: избегание тела, контакт только функциональный, грубое прикосновение
 
-          [availability_of_parent]:channel
-            as "Эмоциональная и физическая доступность родителя"
-            => [readiness_for_exploration]:encode
-              as "Можно отходить от родителя и возвращаться"
-              => [style_of_relationships]:effect
-                as "Гибкость и доверие в отношениях"
+      language_of_thinking: {
+       label: "Язык и структура мышления"
+       description: "То, как взрослые объясняют мир ребёнку, становится основой его внутреннего диалога и логики."
 
-            # healthy: родитель вовлечён, отзывается на плач, остаётся в трудностях
-            # unhealthy: физически рядом, но эмоционально отсутствует, обесценивает сигналы
+        channels: [
+          adult_explanations
+          cause_and_effect_exposure
+          metaphors_used_in_family
+        ]
 
-          [emotional_containment]:channel
-            as "Способность выдерживать эмоции ребёнка и помогать ему с ними быть"
-            ~> [base_trust_or_anxiety]:encode
-            ~> [readiness_for_exploration]:encode
-            ~> [sense_of_self-worth]:encode
+        encodes: [
+          format_of_reasoning
+          pattern_of_explaining_world
+          internal_dialogue_style
+        ]
 
-            # healthy: родитель спокойно говорит «я рядом», помогает прожить слёзы
-            # unhealthy: «перестань ныть», «я сейчас уйду», злость на чувства ребёнка
-        }
+        long_term_effects: [
+          critical_thinking
+          narrative_identity
+          type_of_inner_voice
+        ]
+
+        ref: /nodes/c_e_map/c_a/l_o_t/language_of_thinking.sem
       }
 
 
 
-
-    - area: LanguageOfThinking
-      label: Язык и структура мышления
-      description:
-        То, как взрослые объясняют мир ребёнку, становится основой его внутреннего диалога и логики.
-
-      channels:
-        adult_explanations: "Как взрослые объясняют события: причинно, обобщённо, с эмоцией"
-        cause_and_effect_exposure: "Привычка замечать связи между действиями и их последствиями"
-        metaphors_used_in_family: "Какими образами и примерами взрослые описывают сложное"
-
-      encodes:
-        format_of_reasoning: "Структура рассуждений: цепочная, ассоциативная, фрагментарная"
-        pattern_of_explaining_world: "Как ребёнок учится интерпретировать происходящее"
-        internal_dialogue_style: "Тон и характер внутреннего монолога — поддерживающий или обвиняющий"
-
-      long_term_effects:
-        critical_thinking: "Способность анализировать, видеть причины, сомневаться"
-        narrative_identity: "Образ себя, встроенный в историю: кто я, откуда, куда иду"
-        type_of_inner_voice: "Как звучит внутренний голос — критикует, подбадривает или молчит"
 
     - area: EmotionalEncoding
       label: Эмоциональная грамотность и шаблоны
@@ -169,7 +140,5 @@ model childhood_encoding_map {
         authenticity: "Способность жить в соответствии с собой, а не в угоду внешнему"
 
   }
-
-
 
 }
