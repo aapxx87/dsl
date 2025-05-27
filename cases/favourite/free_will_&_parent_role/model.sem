@@ -24,7 +24,8 @@ model childhood_encoding_map {
 
        long_term_effects: [
         style_of_relationships 
-        emotional_regulation_capacity]
+        emotional_regulation_capacity
+        exploration_mindset]
 
        ref: /nodes/c_e_map/c_a/a_a_s/attachment_and_security.sem
 

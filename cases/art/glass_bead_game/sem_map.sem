@@ -1,0 +1,42 @@
+
+[sem_flow]
+  :label_A  "A"
+    >> [relation_type]
+  :label_B  "B"
+    ...
+[/sem_flow]
+
+
+# Пример: sem_flow:layers
+
+[sem_flow:layers ]
+  :cultural_elements            << "цитаты, идеи, формулы"           
+    >> [selected_as]
+  :semantic_nodes               << "смысловые узлы"                  
+    ~> [organized_into]
+  :structured_thought           << "композиция партии"               
+    => [reflected_through]
+  :philosophical_reflection     << "мета-уровень (жизнь, ответственность)" 
+[/sem_flow:layers ]
+
+
+# Итоговая логика потока
+
+Культурный материал
+  → выделяется как значимый
+    → собирается в форму
+      → становится зеркалом мышления и философской позиции
+
+
+[sem_flow:roles]
+  :composer                << "Игрок"
+    >>[co-acts_with]
+  :interactor              << "Партнёр (соперник/соавтор)" 
+    ~>[witnessed_by]
+  :observers               << "Аудитория" 
+    =>[archived_by]
+  :curator                 << "Архивариус"
+    ~>[framed_by]
+  :meta-regulator          << "Магистр игры" 
+[/sem_flow:roles]
+
