@@ -1,0 +1,18 @@
+{
+
+  entrypoint: question
+              -> question--transform_map
+              -> question--meta-prompts
+              -> question--semantic_rupture
+  ↓
+  readiness: cognitive_trigger_model
+    ↓   
+    structural_basis: [
+      -> tolerance_for_uncertainty 
+      -> intellectual_honesty 
+      -> detachment_from_identity 
+      -> retention_of_discomfort.sem
+    ]
+
+}
+

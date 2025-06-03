@@ -1,0 +1,39 @@
+semantic_game: {
+
+  concept: "",  
+  description: "",  
+  type: "",  
+  context: [],  
+
+  transforms: {
+    input: "",  
+    output: ""  
+  },
+
+  relates_to: {
+    concept: "",  
+    relation: "" 
+  },
+  
+  abstraction_level: "",  
+  role: "",  
+  interpretations: {
+    context: "",     
+    role: "",     
+    meaning: "",      
+  },
+
+  open_questions: [
+   "",
+  ],
+
+  example_compositions: [
+   {
+    pattern: [],      
+    description: "", 
+   }
+  ],
+
+  meta_tags: []
+}
+
