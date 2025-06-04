@@ -1,0 +1,290 @@
+[sem_map:spinoza_freedom]
+
+  "Человек как модус природы"                  :human_as_modus
+    => [имплицирует]
+  "Природная причинность поведения"            :causal_behavior
+    => [отрицает]
+  "Классическое понимание свободы воли"        :free_will_as_choice
+
+  "Свобода воли — иллюзия"                     :freedom_as_illusion
+    <~ "Незнание причин поведения"             :ignorance_of_causes
+    => [заменяется на]
+  "Истинная свобода как знание необходимости"  :freedom_as_understanding
+
+  "Истинная свобода"                           :freedom_as_understanding
+    ~> [требует]
+    [
+      understanding_nature,
+      internal_acceptance
+    ]
+    => [порождает]
+  "Этическое согласие с природой"              :ethical_alignment
+
+  "Развитие человека в пределах сущности"      :bounded_development
+    => [аналогия]
+  "Яблоня в саду"                               :apple_tree_analogy
+    ⊂ [
+      condition_good → плодоношение,
+      condition_poor → нереализованный потенциал
+    ]
+
+  "Мышление обусловлено телом"                 :mind_as_physical
+    => [ограничивает]
+  "Способность к автономному выбору"           :limited_autonomy
+
+  "Этика по Спинозе"                           :spinozan_ethics
+    => [включает]
+  [
+    знание причин,
+    согласие с природой,
+    снятие иллюзий,
+    развитие внутри границ
+  ]
+
+[/sem_map]
+
+
+
+
+
+
+
+
+
+
+# Она будет выполнять функции:
+# 	•	каркаса или оглавления: что есть в модели и как слои соотносятся;
+# 	•	когнитивной разгрузки: позволяет сначала охватить картину, а потом «нырять» в слои;
+# 	•	структурной рефлексии: помогает держать в голове смысловые кластеры без распада.
+
+
+[sem_map:freedom_meta_layers]
+
+  "Поведение как результат внешних причин" :block_determinism
+    => includes: [evolutionary_factors, childhood_encoding, impulsive_behavior ...]
+
+  "Иллюзия свободы и автоматизм" :block_illusion
+    => includes: [freedom_as_illusion, sense_of_agency]
+
+  "Свобода как мета-осознанность" :block_consciousness
+    => includes: [causal_awareness, meta_observer, conscious_override]
+
+  "Агентность и возможность редактирования" :block_agent
+    => includes: [editable_value_system, rational_override, conscious_agent]
+
+  "Механизмы изменений и страдания" :block_change_triggers
+    => includes: [discomfort_trigger, alternative_exposure, desire_to_change]
+
+  "Этические и постфактум механизмы" :block_ethics
+    => includes: [meta_judge, moral_emotions, ethics_over_hedonics]
+
+  "Сравнение моделей агента" :block_models
+    => includes: [agent_model_comparison]
+
+[/sem_map]
+
+
+
+
+
+
+[sem_map:freedom_vs_determinism]
+
+  :block_determinism: {
+
+    "Поведение как результат"                    :behavior_as_function
+      => [explained_by]
+    "Наследованные шаблоны"                      :evolutionary_factors
+      +> "Установки из детства"                  :childhood_encoding
+      +> "Контекст и окружение"                  :external_conditions
+      +> "Внутреннее состояние"                  :internal_state
+      +> "Моментальные стимулы"                  :sensory_triggers
+      => [forms]
+    "Импульсная реакция"                         :impulsive_behavior
+
+  }
+
+
+  :block_illusion: {
+   
+    "Иллюзия свободы воли"                       :freedom_as_illusion
+      <~ "Неведение причин"                      :ignorance_of_causes
+      <~ "Ретроспективная рационализация"        :postfactum_narration
+      => [sustains]
+    "Чувство автономии"                          :sense_of_agency
+
+  }
+
+
+  :block_consciousness: {
+
+    "Настоящая свобода"                          :freedom_as_understanding
+      ~> [requires]
+    "Осознание причинности"                      :causal_awareness
+      +> "Мета-позиция"                          :meta_observer
+      +> "Редактируемая система ценностей"       :editable_value_system
+      +> "Временная задержка перед действием"    :temporal_buffer
+      => [enables]
+    "Рефлексивный выбор"                         :conscious_override
+
+  }
+
+
+
+  :block_agent: {
+
+    "Агент с возможностью осознанного выбора"    :conscious_agent
+    ⊃ "Те же входы, что и у детерминированного" :shared_inputs
+    +> "Дополнительно: мета-механизмы"         :meta_context
+      includes: [
+        awareness_of_origin,
+        reflective_editing,
+        override_mechanism
+      ]
+    => [может осуществлять]
+    "Переопределение импульса"                   :rational_override
+
+  }
+
+
+
+  :block_change_triggers: {
+
+    "Условия перехода к изменению"               :change_triggers
+      << "Страдание от текущего состояния"       :discomfort_trigger
+      +> "Контраст с альтернативой"              :alternative_exposure
+      +> "Когнитивная симуляция и образ будущего":future_projection
+      => [порождает]
+    "Импульс к самоизменению"                    :desire_to_change
+
+  }
+
+
+  :block_ethics: {
+
+    "Толерантность к боли как пропуск к выбору"  :pain_tolerance_layer
+      ~> [основа]
+    "Действие вопреки гедонизму"                 :ethics_over_hedonics
+
+    "Модель наблюдателя-судьи"                   :meta_judge
+      f(
+        retrospective_simulation +
+        value_comparison +
+        episodic_memory
+      )
+      => [outputs]
+    "Состояния сожаления / вины / стыда"         :moral_emotions
+
+  }
+
+
+  :block_models: {
+
+    "Итоговое различие моделей агента"           :agent_model_comparison
+    DeterministicAgent: {
+      value_system: acquired_unconsciously,
+      override: rare,
+      traceability: low
+    }
+    ConsciousAgent: {
+      value_system: editable,
+      override: core_component,
+      traceability: high
+    }
+
+  }
+
+
+[/sem_map]
+
+
+
+
+
+
+
+
+
+[sem_map:block_change_triggers]
+
+  "Стартовое условие: внутренний конфликт"       :inner_conflict
+    => [может принимать форму]
+  "Страдание от текущего состояния"              :discomfort_trigger
+    ⊂ types: [
+      физическое напряжение,
+      эмоциональное выгорание,
+      когнитивный диссонанс,
+      ощущение бессмысленности
+    ]
+
+  "Порог чувствительности к боли"                :pain_threshold
+    => [влияет на]
+  "Толерантность к дискомфорту"                  :tolerance_range
+    => [определяет]
+  "Вероятность запуска перехода"                 :change_likelihood
+
+  "Контраст с альтернативой"                     :alternative_exposure
+    source: [
+      внешние модели поведения,
+      наблюдение за другими,
+      искусство/культура,
+      взаимодействие с новым контекстом
+    ]
+    => [активирует]
+  "Желание иной версии себя"                     :emergent_self_model
+
+  "Когнитивная симуляция и образ будущего"       :future_projection
+    includes: [
+      предвосхищение боли при неизменении,
+      визуализация более целостного состояния,
+      временные проекции — как будет если я изменюсь?
+    ]
+    => [порождает]
+  "Импульс к самоизменению"                      :desire_to_change
+
+  "Импульс к самоизменению"                      :desire_to_change
+    => [зависит от]
+  [
+    inner_conflict,
+    alternative_exposure,
+    future_projection,
+    tolerance_range
+  ]
+
+[/sem_map]
+
+
+
+
+[sem_map:pain_and_ethics]
+
+  "Толерантность к боли как барьер"               :pain_tolerance_layer
+    ~> [определяет]
+  "Возможность действовать вопреки импульсу"      :anti_impulse_window
+    => [необходимый шаг для]
+  "Этическое действие вне гедонистической логики" :ethics_over_hedonics
+
+  "Источники боли, требующие преодоления"         :pain_sources
+    includes: [
+      краткосрочный дискомфорт,
+      утрата привычной картины мира,
+      социальное давление,
+      экзистенциальный страх
+    ]
+
+  "Модель наблюдателя-судьи"                      :meta_judge
+    composed_of: [
+      retrospective_simulation,
+      value_comparison,
+      episodic_memory
+    ]
+    => [формирует]
+  "Суждение о правильности действия"              :internal_evaluation
+    => [может запускать]
+  "Состояния сожаления / вины / стыда"            :moral_emotions
+
+  "Moral_emotions"                                :moral_emotions
+    ~> [могут стать]
+  "Триггером для ценностного редактирования"      :value_adjustment_trigger
+
+[/sem_map]

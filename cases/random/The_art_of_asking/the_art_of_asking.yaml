@@ -1,23 +1,9 @@
-.
-
-; Архитектура мэпинга
-
-mapping asking_development_lab
-├── context
-├── examples
-├── principles
-├── future_notes
-├── question_building_pipeline
-├── publishing_concept 
-└── produce
 
 
-
-
-mapping asking_development_lab {
+mapping asking_development_lab: {
 
  contex: {
-    abstract_goal: "Развивать искусство постановки вопросов как инструмент исследования тем: выявления причин, следствий, ограничений и предпосылок."
+    abstract_goal: "Развивать искусство постановки вопросов как инструмент исследования тем: выявления причин, следствий, ограничений и предпосылок.",
 
     meta_goals: [
      "Формирование новых точек зрения",
