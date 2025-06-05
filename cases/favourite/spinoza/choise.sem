@@ -73,12 +73,23 @@ freedom_meta_layers: {
 
   
   "Конфликт боли и ценностей" :block_pain_pleasure_system
-  ~> "Автоматизм избегает боли, осознанность принимает её как цену выбора"
-  => includes: [hedonic_vs_reflective, pain_tolerance]
+    ~> "Автоматизм избегает боли, осознанность принимает её как цену выбора"
+    => includes: [hedonic_vs_reflective, pain_tolerance]
+
+  
+  "Порог боли как условие этического выбора" :block_pain_tolerance
+    ~> "агент формирования стойкости к боли и страданию",
+    => includes: [
+      pain-tolerance-emerges-from,
+      осознанный-выбор-через-боль,
+      Deep-Causal-Formation
+    ]
 
 
-  "Механизмы изменений и страдания" :block_change_triggers
-    => includes: [discomfort_trigger, alternative_exposure, desire_to_change]
+  "Агент запуска внутреннего преобразования" :block_change_triggers
+    ~> "зарождение импульса к изменению на основе сравнения, боли и моделирования",
+    => includes: [preconditioned-motivation, desire-to-change]
+
 
 
   "Сравнение моделей агента" :block_agent_models
