@@ -1,6 +1,6 @@
-[semantic_stream_summary]
+semantic_stream_summary: {
 
-  spontaneous-exploration:
+  :spontaneous-exploration:
     эстетика => влечение => осмысление => вопрос
 
   existential-disruption:
@@ -30,7 +30,8 @@
   belief-shift:
     убеждение => потрясение => диссонанс => расслоение => переоценка => новая-система
 
-[/semantic_stream_summary]
+}
+
 
 
 
@@ -84,12 +85,12 @@
 
 transform_map: {
 
-  question_type: spontaneous_exploration
+  question_type: :spontaneous_exploration
   environment: эстетическое/онтологическое любопытство
   triggered_by: beauty | complexity | contact_with_other_mind
   transforms: {
-    { input: "интуитивное влечение к пониманию", output: "вопрос о природе явления" }
-    { input: "эстетическое восприятие структуры мира", output: "исследовательское любопытство" }
+    { input: интуитивное влечение к пониманию, output: вопрос о природе явления }
+    { input: эстетическое восприятие структуры мира, output: исследовательское любопытство }
     { input: чтение/наблюдение/изучение, output: формирование когнитивного запроса }
     { input: ощущение красоты сложных систем, output: потребность узнать, как это устроено }
     { input: контакт с чужим знанием (книга, фильм, лекция), output: рождение внутренних вопросов }

@@ -1,9 +1,9 @@
 #lang racket
 
-(require 
-         "trigger_detection.rkt"
-         "correction_router.rkt"
-         "reflection.rkt")
+(require
+  "trigger_detection.rkt"
+  "correction_router.rkt"
+  "reflection.rkt")
 
 
 ;; 💡 Уровни осознания (с цитированными значениями)
@@ -20,23 +20,19 @@
 (define (handle-trigger narrative)
 
   ;; Восприятие нарратива
-  (define perceived 
-   (perceive narrative))
+  (define perceived (perceive narrative))
   (attention-listener)
 
   ;; Определение типа триггера
-  (define trigger-type 
-    (detect-trigger-type perceived))
+  (define trigger-type (detect-trigger-type perceived))
   (attention-listener)
 
   ;; Запуск подходящего механизма «очистки»
-  (define correction 
-   (route-correction-mechanism trigger-type perceived))
+  (define correction (route-correction-mechanism trigger-type perceived))
   (cognitive-analyzer)
 
   ;; Финальный вопрос / точка осознания
-  (define core-question 
-   (extract-core-question correction))
+  (define core-question (extract-core-question correction))
   (cognitive-analyzer)
 
   ;; Результат
@@ -53,7 +49,21 @@
 
 
 ;; 📌 Заглушки логических маркеров
-(define (attention-listener) 'attention-acknowledged)
+
+(define (attention-listener input filter response)
+
+  (let* (
+         (monitored-stream input) ;; Мониторинг потока
+         (detected-trigger (filter monitored-stream)) ;; Выделение объекта внимания
+         (final-response (response detected-trigger)) ;; Реакция — вызов реакции
+         )
+
+    final-response
+    )
+  )
+
+
+
 (define (cognitive-analyzer) 'analysis-performed)
 
 
