@@ -17,12 +17,16 @@ model_unknowing: {
      ; sem-extension: empty_map.sem
 
     -> 'Условие подлинной 'любознательности — когда осознано, а не вытеснено
-     ; @rkt: descriptions_sem/unknowing_curiosity.sem
-     ; @rkt: descriptions_sem/unknowing_curiosity.rkt
+     ; @rkt: cond_curiosity.sem
+     ; @rkt: cond_curiosity.rkt
 
+    -> Исходная точка 'научного-метода — пространство, откуда 'рождается-гипотеза
+     ; sem-extension: epistimic_engine.sem
+
+    -> 'Зона-риска, в которой могут возникать 'догмы, 'магическое-мышление или 'отказ-от-размышления
     -> Потенциальная 'слепая-зона, если не сопровождается рефлексией и сомнением,
-    -> 'Зона-риска, в которой могут возникать 'догмы, 'магическое-мышление или 'отказ-от-размышления,
-    -> Исходная точка 'научного-метода — пространство, откуда 'рождается-гипотеза,
+
+
   ],
 
   type: метафункция      ?? нужно раскрыть что значит метафункция
@@ -63,8 +67,8 @@ model_unknowing: {
       context: психология,
       role: зона 'тревоги или 'роста,
       meaning: То, как человек реагирует на незнание, определяет его стратегию адаптации
-        :sem-extension: psy-adaptation/adaptation-strategy.sem
-        :rkt: unknown_reaction_adaptation.rkt
+       ; @sem-extension: psy-adaptation/adaptation-strategy.sem
+       ; @rkt: unknown_reaction_adaptation.rkt
     }
   ],
 
@@ -197,6 +201,7 @@ concept_extensions: {
     { related_concept: карта-незнания, relation: структурированное-описание-границ-знания }
   ]
 }
+
 
 
 
