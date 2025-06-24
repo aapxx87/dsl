@@ -3,11 +3,13 @@
 
 ; * 'Условие подлинной 'любознательности — когда осознано, а не вытеснено
 
-
 ;; Возможные модусы осознания сигнала
-(define awareness-modes
-  '(recognized-gap suppressed-gap preconscious-blur confused-response))
-; осознанный-пробел вытеснение-пустоты пред-сознательная-неясность когнитивная-путаница
+(define awareness-modes '(
+    recognized-gap ; осознанный-пробел
+    suppressed-gap ; вытеснение-пустоты
+    preconscious-blur ; пред-сознательная-неясность
+    confused-response)) ; когнитивная-путаница
+
 
 
 
