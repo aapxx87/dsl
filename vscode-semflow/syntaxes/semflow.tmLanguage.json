@@ -1,0 +1,100 @@
+{
+  "scopeName": "source.semflow",
+  "name": "SemFlow",
+  "patterns": [
+    {
+      "name": "punctuation.brackets.curly.semflow",
+      "match": "[\\{\\}]"
+    },
+    {
+      "name": "punctuation.brackets.square.semflow",
+      "match": "[\\[\\]]"
+    },
+    {
+      "name": "keyword.operator.arrow.semflow",
+      "match": "=>|->|~>|\\+>|<~|⊃|⊂|<<|\\?\\?!|~\\?"
+    },
+    {
+      "name": "comment.line.semflow",
+      "begin": ";",
+      "end": "$",
+      "patterns": []
+    },
+    {
+      "name": "entity.name.key.semflow",
+      "match": "\\b[\\w\\-]+(?=:)\\b"
+    },
+    {
+      "name": "variable.annotation.semflow",
+      "match": "\\[.*?\\]"
+    },
+    {
+      "name": "constant.other.marker.semflow",
+      "match": "@[a-zA-Z_]+"
+    },
+    {
+      "name": "string.quoted.double.semflow",
+      "match": "\".*?\""
+    },
+    {
+      "name": "entity.name.tag.semflow",
+      "match": "\\[/[a-zA-Z_\\-]+\\]"
+    },
+    {
+      "name": "keyword.operator.doublecolon.semflow",
+      "match": "::"
+    },
+    {
+      "name": "keyword.operator.pipe.semflow",
+      "match": "\\|"
+    },
+    {
+      "name": "variable.semantic.role.semflow",
+      "match": ":[a-zA-Zа-яА-ЯёЁ_\\-/]+"
+    },
+    {
+      "name": "markup.heading.semflow",
+      "begin": "^(#{1,5})[ \\t]+",
+      "end": "$",
+      "patterns": []
+    },
+    {
+      "name": "comment.meta.question.semflow",
+      "begin": "\\?\\?",
+      "end": "$",
+      "patterns": []
+    },
+    {
+      "name": "comment.meta.attention.semflow",
+      "begin": "!!",
+      "end": "$",
+      "patterns": []
+    },
+    {
+      "name": "markup.inline.codeword.semflow",
+      "match": "`[\\wа-яА-ЯёЁ\\-/]+"
+    },
+    {
+      "name": "constant.language.boolean.true.semflow",
+      "match": "#t"
+    },
+    {
+      "name": "constant.language.boolean.false.semflow",
+      "match": "#f"
+    },
+    {
+      "name": "constant.symbol.quoted.semflow",
+      "match": "'[\\wа-яА-ЯёЁ\\-_]+"
+    },
+    {
+      "name": "keyword.control.semflow",
+      "match": "\\b(define|lambda|let\\*?|if|cond|and|or|not|begin|quote|set!|letrec|else|member|функция|логическая-цепочка|выбор|если|иначе|набор|list|match|тогда|иначе|и|или)\\b"
+    },
+    {
+      "name": "entity.name.function.predicate.semflow",
+      "match": "[\\wа-яА-ЯёЁ\\-_]+\\?"
+    }
+  ],
+  "repository": {},
+  "scope": "source.semflow"
+}

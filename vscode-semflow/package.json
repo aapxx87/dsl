@@ -1,0 +1,28 @@
+{
+  "name": "semflow-syntax",
+  "displayName": "SemFlow Syntax Highlighting",
+  "description": "Подсветка и иконка для языка .sem",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "semflow",
+        "aliases": ["SemFlow", "semflow"],
+        "extensions": [".sem"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "semflow",
+        "scopeName": "source.semflow",
+        "path": "./syntaxes/semflow.tmLanguage.json"
+      }
+    ]
+  }
+}
